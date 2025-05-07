@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Random Password Generator</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🔐 Password Generator</h1>
+    <div class="container">
+        <h1>🔐 Random Password Generator</h1>
 
-    <label for="numOfLength">Password Length</label>
-    <input type="number" id="numOfLength" min="1" placeholder="e.g., 12" required />
+        <input type="text" id="passwordshow" placeholder="Password will appear here" readonly>
 
-    <input type="text" id="password" readonly placeholder="Your password will appear here" />
+        <div class="settings">
+            <label><input type="checkbox" id="numbers" class="inputss"> Include Numbers</label>
+            <label><input type="checkbox" id="UpperCases" class="inputss"> Include Uppercase Letters</label>
+            <label><input type="checkbox" id="lowerCases" class="inputss"> Include Lowercase Letters</label>
+            <label><input type="checkbox" id="symbols" class="inputss"> Include Symbols</label>
+        </div>
 
-    <div class="btn-group">
-      <button onclick="passappear()">Generate</button>
-      <button onclick="copytoclipboard()">Copy</button>
+        <div class="slider-container">
+            <label for="lengthRange">Password Length: <span id="lengthDisplay">12</span></label>
+            <input type="range" id="lengthRange" min="4" max="32" value="12">
+        </div>
+
+        <div class="buttons">
+            <button id="generate">Generate Password</button>
+            <button id="copy">Copy</button>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
